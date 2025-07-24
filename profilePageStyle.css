@@ -1,0 +1,27 @@
+#profile {
+    border-radius: 10%;
+    border: 2px solid #000000;
+    display: flex;
+    position: relative;
+    width: 420px;
+    padding: 10px;
+    margin: 15px;
+    background: #296448;
+}
+.profilePic {
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    margin: 15px;
+    left: 0;
+    top: 0;
+    display: flex;
+}
+#profileTxt {
+    background: #d2fef0;
+    padding: 10px;
+    border-radius: 10%;
+}
+body {
+    background: #b8f5c2;
+}
