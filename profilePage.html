@@ -4,7 +4,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="./profilePageStyle.css">
     </head>
-    <body>
+    <body class="light">
         <div id="sections">
             <div id="buttons">
                 <button id="brightness">Light/Dark Mode</button>
@@ -30,6 +30,14 @@
                 <h3>Projects</h3>
                 <ul id="projectList"></ul>
             </div>
+            <div>
+                <form id='contactForm'>
+                    <input type='text' id='name' placeholder="Your Name">
+                    <input type="email" id="email" placeholder="Your Email">
+                    <textarea id="message" placeholder="Your Message"></textarea>
+                    <button type="submit">Send</button>
+                </form>
+            </div>
         </div>
     </body>
     <script>
@@ -45,16 +53,34 @@
             }
         );
         const brightnessBtn  = document.querySelector('#brightness');
-        const divs = document.querySelectorAll("div");
+        const body = document.querySelector("body");
         brightnessBtn.addEventListener("click", () => {
-            console.log("clicked brightness button");
-            divs.forEach(div => {
-                div.style.background =
-                div.style.background === '#FFFFFF' ? '#000000' : '#FFFFFFF';
-                div.style.color =
-                div.style.color === '#FFFFFF' ? '#000000' : '#FFFFFFF';
-                    }
-                );
-        });
+            if(body.className == 'light') {
+                body.className = 'dark'
+            } else {
+                body.className = 'light'
+            }
+            }
+        );
+        const form = document.getElementById('contactForm');
+
+        form.addEventListener('submit', function(e){
+            e.preventDefault();
+            const name = form.name.value.trim();
+            const email = form.email.value.trim();
+            const message = form.message.value.trim();
+
+            const feedback = document.createElement('p');
+
+            if (!name || !email || !message) { //checks if name is blank
+                feedback.textContent = "Please fill out all fields.";
+                feedback.style.color = "red";
+            } else {
+                feedback.textContent = "Thank you for your message.";
+                feedback.style.color = "green";
+            }
+            form.appendChild(feedback);
+            }
+        )
     </script>
 </html>

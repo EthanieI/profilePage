@@ -1,6 +1,6 @@
 #profile {
     border-radius: 10%;
-    border: 2px solid #000000;
+    border: 2px solid;
     display: flex;
     position: relative;
     width: 420px;
@@ -17,15 +17,25 @@
     display: flex;
 }
 #profileTxt {
-    border: 2px solid #000000;
+    border: 2px solid;
     padding: 10px;
     border-radius: 10%;
 }
-#education, #projects {
+#education, #projects, #contactForm{
     padding: 10px;
     border-radius: 10%;
-    border: 2px solid #000000;
+    border: 2px solid;
     width: 420px;
     padding: 10px;
     margin: 15px;
+}
+.light {
+    background: #FFFFFF;
+    color: #000000;
+    border-color: #000000;
+}
+.dark {
+    background: #000000;
+    color: #FFFFFF;
+    border-color: #FFFFFF;
 }
